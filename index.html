@@ -36,6 +36,8 @@
             <nav>
               <ul>
                 
+                  <li><a href="#rsvp">RSVP</a></li>
+                
                   <li><a href="#registry">Registry</a></li>
                 
               </ul>
@@ -45,11 +47,49 @@
         
           <div id="main">
             
+              <article id="rsvp">
+  <h1>RSVP</h1>
+  <p><form id="contactform" method="post" action="https://formspree.io/labargeintraining@gmail.com">
+    <div class="field">
+        <input type="text" name="name" id="name" placeholder="Name of Attendees (First & Last)"/>
+    </div>
+    <div class="field">
+        <input type="email" id="email" name="email" placeholder="Email">
+    </div>
+    <div class="field">
+        <textarea name="message" id="message" rows="4" placeholder="Message (Optional)"></textarea>
+    </div>
+    <ul class="actions">
+        <li><input type="submit" value="Send RSVP" class="special" /></li>
+        <li><input type="reset" value="Reset" /></li>
+    </ul>
+    <input type="hidden" name="_next" value="?sent#formspree" />
+    <input type="hidden" name="_subject" value="Subject for your mail like new message" />
+    <input type="text" name="_gotcha" style="display:none" />
+</form>
+<span id="contactformsent">Thank you for your message</span></p>
+
+<script>
+$(document).ready(function($) {
+    $(function(){
+        if (window.location.search == "?sent") {
+            $('#contactform').hide();
+            $('#contactformsent').show();
+        } else {
+            $('#contactformsent').hide();
+        }
+    });
+});
+</script>
+
+</article>
+
+            
               <article id="registry">
   <h1>Registry</h1>
   <div class="registry-options">
 <img class="circular" src="/images/front-face.png" aria-hidden="true">
-<p>You may use either of the following retailers:</p>
+<p>We are registered at following retailers:</p>
 <div class='retailer'>
 <i class="fa fa-amazon" aria-hidden="true"></i>
 <h2>Amazon</h2>
